@@ -1,24 +1,24 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 0,
-    "passes": 0,
+    "tests": 1,
+    "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-12-17T19:04:51.148Z",
-    "end": "2025-12-17T19:05:01.802Z",
-    "duration": 10654,
+    "start": "2026-01-08T17:06:57.817Z",
+    "end": "2026-01-08T17:07:06.511Z",
+    "duration": 8694,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
-    "other": 2,
-    "hasOther": true,
-    "skipped": 1,
-    "hasSkipped": true
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
   },
   "results": [
     {
-      "uuid": "1f902cd9-e4d6-4ead-8a00-407b941a150e",
+      "uuid": "708f8288-f0e4-4996-b3ff-bd3796caae65",
       "title": "",
       "fullFile": "/Users/mar/Desktop/testingSeleniumJS/project/test/specs/login.test.js",
       "file": "/test/specs/login.test.js",
@@ -27,89 +27,81 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0f2e960f-a4a7-4815-a884-e32272b17b1b",
+          "uuid": "8264354d-6be6-43e3-b40c-ee29a695e4aa",
           "title": "Login Tests",
           "fullFile": "/Users/mar/Desktop/testingSeleniumJS/project/test/specs/login.test.js",
           "file": "/test/specs/login.test.js",
           "beforeHooks": [
             {
-              "title": "\"before all\" hook for \"Login exitoso con credenciales válidas\"",
-              "fullTitle": "Login Tests \"before all\" hook for \"Login exitoso con credenciales válidas\"",
-              "timedOut": true,
-              "duration": 10641,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "driver = await getDriver();\nloginPage = new LoginPage(driver);",
-              "err": {
-                "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (/Users/mar/Desktop/testingSeleniumJS/project/test/specs/login.test.js)",
-                "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (/Users/mar/Desktop/testingSeleniumJS/project/test/specs/login.test.js)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)",
-                "diff": null
-              },
-              "uuid": "301753dc-9794-4e50-871d-4dfe4ad85f5c",
-              "parentUUID": "0f2e960f-a4a7-4815-a884-e32272b17b1b",
-              "isHook": true,
-              "skipped": false
-            }
-          ],
-          "afterHooks": [
-            {
-              "title": "\"after all\" hook for \"Login exitoso con credenciales válidas\"",
-              "fullTitle": "Login Tests \"after all\" hook for \"Login exitoso con credenciales válidas\"",
+              "title": "\"before each\" hook in \"Login Tests\"",
+              "fullTitle": "Login Tests \"before each\" hook in \"Login Tests\"",
               "timedOut": false,
-              "duration": 1,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "await driver.quit();",
-              "err": {
-                "message": "TypeError: Cannot read properties of undefined (reading 'quit')",
-                "estack": "TypeError: Cannot read properties of undefined (reading 'quit')\n    at Context.<anonymous> (test/specs/login.test.js:15:18)\n    at process.processImmediate (node:internal/timers:504:21)",
-                "diff": null
-              },
-              "uuid": "94b443d3-9aa2-4356-95e9-a2fbb3dbd387",
-              "parentUUID": "0f2e960f-a4a7-4815-a884-e32272b17b1b",
-              "isHook": true,
-              "skipped": false
-            }
-          ],
-          "tests": [
-            {
-              "title": "Login exitoso con credenciales válidas",
-              "fullTitle": "Login Tests Login exitoso con credenciales válidas",
-              "timedOut": false,
-              "duration": 0,
+              "duration": 3259,
               "state": null,
               "speed": null,
               "pass": false,
               "fail": false,
               "pending": false,
               "context": null,
+              "code": "driver = await getDriver();\nloginPage = new LoginPage(driver);",
+              "err": {},
+              "uuid": "b17d1edd-a85f-47ac-8317-c84ad4f37b0a",
+              "parentUUID": "8264354d-6be6-43e3-b40c-ee29a695e4aa",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"Login Tests\"",
+              "fullTitle": "Login Tests \"after each\" hook in \"Login Tests\"",
+              "timedOut": false,
+              "duration": 108,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (driver){\n  await driver.quit();\n}",
+              "err": {},
+              "uuid": "a014fe5d-bdde-4c65-aacc-ad8d3e536e42",
+              "parentUUID": "8264354d-6be6-43e3-b40c-ee29a695e4aa",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Successful login with valid credentials",
+              "fullTitle": "Login Tests Successful login with valid credentials",
+              "timedOut": false,
+              "duration": 5314,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
               "code": "await loginPage.open();\nawait loginPage.login('Admin', 'admin123');\nconst url = await driver.getCurrentUrl();\nexpect(url).to.include('dashboard');",
               "err": {},
-              "uuid": "086bafdb-203a-455e-a41e-5618d07e29a8",
-              "parentUUID": "0f2e960f-a4a7-4815-a884-e32272b17b1b",
+              "uuid": "620159d4-7a77-4883-b5c4-6eed444313c6",
+              "parentUUID": "8264354d-6be6-43e3-b40c-ee29a695e4aa",
               "isHook": false,
-              "skipped": true
+              "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
+          "passes": [
+            "620159d4-7a77-4883-b5c4-6eed444313c6"
+          ],
           "failures": [],
           "pending": [],
-          "skipped": [
-            "086bafdb-203a-455e-a41e-5618d07e29a8"
-          ],
-          "duration": 0,
+          "skipped": [],
+          "duration": 5314,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 2000
+          "_timeout": 30000
         }
       ],
       "passes": [],

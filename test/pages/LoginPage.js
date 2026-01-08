@@ -9,11 +9,15 @@ class LoginPage {
   }
 
   async open() {
-    await this.driver.get('https://opensource-demo.orangehrmlive.com/web');
+    await this.driver.get('https://opensource-demo.orangehrmlive.com');
   }
 
   async login(user, pass) {
-    await this.driver.wait(until.elementLocated(this.username), 5000);
+
+    const usernameInput = await this.driver.wait(
+      until.elementLocated(this.username),10000);
+    
+    await this.driver.wait(until.elementIsVisible(usernameInput), 5000);
     await this.driver.findElement(this.username).sendKeys(user);
     await this.driver.findElement(this.password).sendKeys(pass);
     await this.driver.findElement(this.loginBtn).click();

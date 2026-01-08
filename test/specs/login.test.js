@@ -3,19 +3,23 @@ const { getDriver } = require('../utils/driverFactory');
 const LoginPage = require('../pages/LoginPage');
 
 describe('Login Tests', function () {
+  this.timeout(30000);
+  
   let driver;
   let loginPage;
 
-  before(async () => {
+   beforeEach(async () => {
     driver = await getDriver();
     loginPage = new LoginPage(driver);
   });
 
-  after(async () => {
-    await driver.quit();
+  afterEach(async () => {
+    if (driver){
+      await driver.quit();
+    }
   });
 
-  it('Login exitoso con credenciales válidas', async () => {
+  it('Successful login with valid credentials', async () => {
     await loginPage.open();
     await loginPage.login('Admin', 'admin123');
 
